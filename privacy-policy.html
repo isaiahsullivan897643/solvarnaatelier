@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | Solvarna Atelier</title>
+  <!-- Favicon matching the brand monogram logo -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23C07A4B'/><circle cx='50' cy='50' r='42' fill='none' stroke='%23FAF6F0' stroke-width='3'/><text x='50' y='63' font-family='serif' font-size='44' font-weight='700' fill='%23FAF6F0' text-anchor='middle'>S</text></svg>">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          },
+          colors: {
+            brand: {
+              cream: '#FAF6F0',
+              sand: '#F2EBE1',
+              accent: '#C07A4B',
+              accentHover: '#A86438',
+              charcoal: '#1A1816',
+              muted: '#66615C',
+              dark: '#121110',
+              walnut: '#2E221B'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FAF7F2;
+      color: #1E1E1E;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-brand-cream text-brand-charcoal antialiased selection:bg-brand-accent selection:text-white flex flex-col min-h-screen justify-between">
+
+  <!-- Notification Toast -->
+  <div id="toast" class="fixed top-24 right-5 z-50 transform translate-x-full transition-transform duration-300 ease-in-out bg-brand-charcoal text-white px-5 py-4 rounded-xl shadow-2xl flex items-center gap-3 border border-stone-700">
+    <i class="fa-solid fa-circle-check text-brand-accent text-lg"></i>
+    <span id="toast-message" class="text-sm font-medium">Added to cart</span>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-40 bg-brand-cream/90 backdrop-blur-md border-b border-stone-200/70 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="index.html#home" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-full bg-brand-accent flex items-center justify-center text-white font-serif text-2xl font-bold shadow-sm transition-transform duration-300 group-hover:scale-105">
+            S
+          </div>
+          <div class="flex flex-col">
+            <span class="font-serif text-2xl font-bold tracking-tight text-brand-charcoal leading-none">SOLVARNA</span>
+            <span class="text-[10px] tracking-[0.25em] text-brand-accent uppercase font-semibold mt-0.5">Atelier & Living</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-stone-700">
+          <a href="index.html#home" class="hover:text-brand-accent transition-colors">Home</a>
+          <a href="index.html#categories" class="hover:text-brand-accent transition-colors">Spaces</a>
+          <a href="index.html#products" class="hover:text-brand-accent transition-colors">Collection</a>
+          <a href="index.html#craft" class="hover:text-brand-accent transition-colors">Craftsmanship</a>
+          <a href="index.html#reviews" class="hover:text-brand-accent transition-colors">Reviews</a>
+          <a href="index.html#faq" class="hover:text-brand-accent transition-colors">FAQ</a>
+          <a href="index.html#contact" class="hover:text-brand-accent transition-colors">Contact</a>
+        </nav>
+
+        <!-- Right Action Icons -->
+        <div class="flex items-center gap-4">
+          <button id="cart-btn" class="relative p-2.5 rounded-full hover:bg-stone-200/60 transition-colors" aria-label="Open Cart">
+            <i class="fa-solid fa-bag-shopping text-xl text-brand-charcoal"></i>
+            <span id="cart-badge" class="absolute top-1 right-1 w-5 h-5 bg-brand-accent text-white text-xs font-bold rounded-full flex items-center justify-center scale-0 transition-transform">0</span>
+          </button>
+
+          <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-lg text-brand-charcoal hover:bg-stone-200/60 transition-colors" aria-label="Open Menu">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-cream border-b border-stone-200 px-6 py-5 space-y-4 shadow-lg">
+      <a href="index.html#home" class="block text-base font-medium text-stone-800 hover:text-brand-accent">Home</a>
+      <a href="index.html#categories" class="block text-base font-medium text-stone-800 hover:text-brand-accent">Spaces</a>
+      <a href="index.html#products" class="block text-base font-medium text-stone-800 hover:text-brand-accent">Collection</a>
+      <a href="index.html#craft" class="block text-base font-medium text-stone-800 hover:text-brand-accent">Craftsmanship</a>
+      <a href="index.html#reviews" class="block text-base font-medium text-stone-800 hover:text-brand-accent">Reviews</a>
+      <a href="index.html#faq" class="block text-base font-medium text-stone-800 hover:text-brand-accent">FAQ</a>
+      <a href="index.html#contact" class="block text-base font-medium text-stone-800 hover:text-brand-accent">Contact</a>
+    </div>
+  </header>
+
+  <!-- Cart Slide-Over Drawer -->
+  <div id="cart-drawer-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300">
+    <div id="cart-drawer" class="absolute top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out">
+      <div class="p-6 border-b border-stone-100 flex items-center justify-between">
+        <h3 class="font-serif text-xl font-bold text-brand-charcoal">Your Shopping Cart</h3>
+        <button id="close-cart-btn" class="text-stone-400 hover:text-stone-700 p-1">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
+      <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4">
+        <p id="empty-cart-text" class="text-stone-500 text-center py-12">Your cart is currently empty.</p>
+      </div>
+      <div class="p-6 border-t border-stone-100 bg-brand-cream/60">
+        <div class="flex justify-between items-center mb-4 text-stone-700 font-semibold">
+          <span>Subtotal:</span>
+          <span id="cart-total-price" class="text-xl font-bold text-brand-charcoal">$0.00</span>
+        </div>
+        <button onclick="showToast('Checkout simulated! Thank you.')" class="w-full bg-brand-charcoal hover:bg-black text-white font-medium py-3.5 rounded-xl transition shadow hover:shadow-lg">
+          Proceed to Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Body -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="text-center mb-12">
+      <span class="px-3.5 py-1 text-[11px] font-bold uppercase tracking-widest text-brand-accent bg-brand-sand rounded-full">
+        Privacy & Compliance
+      </span>
+      <h1 class="font-serif text-3xl sm:text-5xl font-bold text-brand-charcoal mt-4">Privacy Policy</h1>
+      <p class="text-xs sm:text-sm text-brand-muted mt-3">Effective Date: October 2026 • Denver, Colorado, USA</p>
+    </div>
+
+    <div class="bg-white border border-stone-200/80 rounded-2xl p-6 sm:p-10 space-y-8 shadow-sm">
+      <section>
+        <h2 class="font-serif text-2xl font-bold text-brand-charcoal mb-3 flex items-center gap-2.5">
+          <i class="fa-solid fa-shield-halved text-brand-accent text-lg"></i> 1. Introduction
+        </h2>
+        <p class="text-sm sm:text-base leading-relaxed text-brand-muted">
+          Solvarna Atelier ("we," "our," or "us"), operating studio headquarters at <strong>742 Evergreen Terrace, Suite 300, Denver, CO 80202, USA</strong>, honors your individual data privacy with the same commitment to precision we bring to our sculpted wood furnishings. This statement explains how we gather, process, and safeguard your data.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-2xl font-bold text-brand-charcoal mb-3 flex items-center gap-2.5">
+          <i class="fa-solid fa-database text-brand-accent text-lg"></i> 2. Information We Collect
+        </h2>
+        <p class="text-sm sm:text-base leading-relaxed text-brand-muted mb-3">
+          To process home orders in United States Dollars ($ USD) and fulfill freight deliveries across the USA, we collect:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 text-sm sm:text-base text-brand-muted">
+          <li><strong>Contact & Address Data:</strong> Full legal name, residential delivery street address, apartment/suite details, gate codes, and email address.</li>
+          <li><strong>Payment Information:</strong> Tokenized payment logs processed via PCI-compliant payment gateways. We never store credit or debit card numbers on our servers.</li>
+          <li><strong>Order Preferences:</strong> Room specs, custom timber finishes (natural walnut, smoked ash, bleached oak), and product queries sent through our concierge form.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-2xl font-bold text-brand-charcoal mb-3 flex items-center gap-2.5">
+          <i class="fa-solid fa-truck-ramp-box text-brand-accent text-lg"></i> 3. Shipping & Logistics Partners
+        </h2>
+        <p class="text-sm sm:text-base leading-relaxed text-brand-muted">
+          We only share essential recipient details with our freight carriers to schedule appointment-based curbside or inside room drop-offs. We do not sell, rent, or lease your personal information to third-party advertising brokers.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-2xl font-bold text-brand-charcoal mb-3 flex items-center gap-2.5">
+          <i class="fa-solid fa-user-shield text-brand-accent text-lg"></i> 4. CCPA & Consumer Privacy Rights
+        </h2>
+        <p class="text-sm sm:text-base leading-relaxed text-brand-muted">
+          Under the California Consumer Privacy Act (CCPA) and US state consumer privacy regulations, you have the right to request access to the data we maintain on your profile, request corrections, or demand complete deletion of customer records after order fulfillment and warranty setup.
+        </p>
+      </section>
+
+      <section class="border-t border-stone-200 pt-6">
+        <h2 class="font-serif text-2xl font-bold text-brand-charcoal mb-3 flex items-center gap-2.5">
+          <i class="fa-solid fa-envelope text-brand-accent text-lg"></i> 5. Contact the Privacy Desk
+        </h2>
+        <p class="text-sm sm:text-base text-brand-muted">
+          If you have any questions or data requests, contact our privacy desk directly:
+        </p>
+        <div class="mt-4 p-5 rounded-xl bg-brand-sand/60 border border-stone-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <div class="font-bold text-brand-charcoal">Solvarna Atelier Privacy Office</div>
+            <div class="text-xs text-brand-muted">742 Evergreen Terrace, Suite 300, Denver, CO 80202, USA</div>
+            <div class="text-sm text-brand-accent font-semibold mt-1">support@solvarnaatelier.com</div>
+          </div>
+          <a href="mailto:support@solvarnaatelier.com?subject=Privacy%20Desk%20Inquiry" class="px-5 py-2.5 rounded-xl bg-brand-charcoal hover:bg-black text-white text-xs font-bold uppercase tracking-wider text-center transition">
+            Email Privacy Desk
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-brand-dark text-stone-400 pt-16 pb-12 border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-stone-800">
+        
+        <!-- Brand Info -->
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 rounded-full bg-brand-accent flex items-center justify-center text-white font-serif text-lg font-bold">S</div>
+            <span class="font-serif text-2xl font-bold text-white tracking-tight">SOLVARNA</span>
+          </div>
+          <p class="text-stone-400 text-xs sm:text-sm leading-relaxed mb-6">
+            Sculptural wooden living, architectural ergonomics, and hand-finished Scandinavian minimalism made for modern sanctuaries.
+          </p>
+          <div class="text-xs text-stone-400 space-y-2">
+            <p><i class="fa-solid fa-location-dot text-brand-accent mr-2"></i> 742 Evergreen Terrace, Suite 300, Denver, CO 80202, USA</p>
+            <p><i class="fa-solid fa-envelope text-brand-accent mr-2"></i> support@solvarnaatelier.com</p>
+          </div>
+        </div>
+
+        <!-- Curated Spaces -->
+        <div>
+          <h4 class="font-serif text-white font-bold text-base mb-4 tracking-wider uppercase">Spaces</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="index.html#categories" class="hover:text-brand-accent transition-colors">Living Room Sanctuary</a></li>
+            <li><a href="index.html#categories" class="hover:text-brand-accent transition-colors">Ergonomic Task Studio</a></li>
+            <li><a href="index.html#categories" class="hover:text-brand-accent transition-colors">Dining & Communal</a></li>
+            <li><a href="index.html#categories" class="hover:text-brand-accent transition-colors">Master Bedroom Retreat</a></li>
+          </ul>
+        </div>
+
+        <!-- Catalog Highlights (USD) -->
+        <div>
+          <h4 class="font-serif text-white font-bold text-base mb-4 tracking-wider uppercase">Collection (USD)</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="index.html#products" class="hover:text-brand-accent transition-colors">Desk Organizer ($38)</a></li>
+            <li><a href="index.html#products" class="hover:text-brand-accent transition-colors">Ceramic Lantern ($46)</a></li>
+            <li><a href="index.html#products" class="hover:text-brand-accent transition-colors">Ergonomic Task Chair ($149)</a></li>
+            <li><a href="index.html#products" class="hover:text-brand-accent transition-colors">Nordic Oak Dining Table ($240)</a></li>
+            <li><a href="index.html#products" class="hover:text-brand-accent transition-colors">Restful Haven Bed ($340)</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal Policies -->
+        <div>
+          <h4 class="font-serif text-white font-bold text-base mb-4 tracking-wider uppercase">Policies & Legal</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li>
+              <a href="privacy-policy.html" class="text-brand-accent font-semibold transition-colors flex items-center gap-1.5">
+                <i class="fa-solid fa-shield-halved text-xs"></i> Privacy Policy (CCPA)
+              </a>
+            </li>
+            <li>
+              <a href="refund-policy.html" class="hover:text-brand-accent transition-colors flex items-center gap-1.5">
+                <i class="fa-solid fa-rotate-left text-xs"></i> Refund & 30-Day Trial
+              </a>
+            </li>
+            <li>
+              <a href="terms-and-conditions.html" class="hover:text-brand-accent transition-colors flex items-center gap-1.5">
+                <i class="fa-solid fa-scale-balanced text-xs"></i> Terms & Conditions
+              </a>
+            </li>
+            <li><a href="index.html#contact" class="hover:text-brand-accent transition-colors">Denver Concierge</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+        <p>&copy; <span id="current-year"></span> Solvarna Atelier & Living LLC. All rights reserved.</p>
+        <div class="flex gap-4">
+          <a href="privacy-policy.html" class="text-brand-accent underline">Privacy Policy</a>
+          <a href="refund-policy.html" class="hover:text-stone-300 underline">Refund Policy</a>
+          <a href="terms-and-conditions.html" class="hover:text-stone-300 underline">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Drawer and Mobile Menu Logic
+    const cartBtn = document.getElementById('cart-btn');
+    const closeCartBtn = document.getElementById('close-cart-btn');
+    const cartDrawerOverlay = document.getElementById('cart-drawer-overlay');
+    const cartDrawer = document.getElementById('cart-drawer');
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function openCart() {
+      cartDrawerOverlay.classList.remove('hidden');
+      setTimeout(() => {
+        cartDrawerOverlay.classList.remove('opacity-0');
+        cartDrawer.classList.remove('translate-x-full');
+      }, 10);
+    }
+
+    function closeCart() {
+      cartDrawer.classList.add('translate-x-full');
+      cartDrawerOverlay.classList.add('opacity-0');
+      setTimeout(() => cartDrawerOverlay.classList.add('hidden'), 300);
+    }
+
+    cartBtn.addEventListener('click', openCart);
+    closeCartBtn.addEventListener('click', closeCart);
+    cartDrawerOverlay.addEventListener('click', (e) => {
+      if (e.target === cartDrawerOverlay) closeCart();
+    });
+
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-message').textContent = msg;
+      toast.classList.remove('translate-x-full');
+      setTimeout(() => toast.classList.add('translate-x-full'), 3000);
+    }
+  </script>
+</body>
+</html>
